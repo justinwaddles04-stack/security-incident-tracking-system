@@ -32,3 +32,9 @@ SELECT severity, COUNT(*) AS severity_count
 FROM security_incidents
 GROUP BY severity
 ORDER BY severity_count DESC;
+
+SELECT asset_name, COUNT(*) AS high_severity_count
+FROM security_incidents
+WHERE severity = 'High'
+GROUP BY asset_name
+ORDER BY high_severity_count DESC;
